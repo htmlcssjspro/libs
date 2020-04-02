@@ -1,0 +1,119 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-weight: normal;
+  line-height: 1.25;
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: block;
+  font-weight: bolder;
+  margin: 1em;
+  // padding: 1em;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.75em;
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+div,
+a,
+span,
+img,
+button,
+header,
+footer,
+main,
+aside,
+nav,
+section,
+article {
+  display: block;
+  box-sizing: border-box;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  border-style: none;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+
+  &:focus,
+  &.focus {
+    outline: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    opacity: 0.65;
+  }
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 1em;
+  line-height: 1.25;
+  margin: 0;
+}
+
+input {
+  overflow: visible;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+[hidden] {
+  display: none;
+}

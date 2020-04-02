@@ -1,0 +1,141 @@
+.militer-slider {
+  position: relative;
+  overflow: hidden;
+
+  &__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: transform 1s ease;
+  }
+
+  &__slide {
+    // flex: 0 0 100%;
+  }
+
+  &__dots {
+    display: flex;
+    justify-content: center;
+    // align-items: flex-end;
+    align-items: center;
+  }
+
+  &__dot {
+    display: flex;
+    padding: 1em 0.5em;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      width: 0.5em;
+      height: 0.5em;
+      border-radius: 0.25em;
+      background: $grey-600;
+    }
+
+    &.active::before {
+      background: $blue;
+    }
+  }
+
+  &__arrow_prev,
+  &__arrow_next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    background: transparent;
+    border: none;
+    // @extend %btn-box-shadow;
+
+    &.active {
+      background: $blue;
+    }
+  }
+
+  &__arrow_prev {
+    left: 0;
+  }
+
+  &__arrow_next {
+    right: 0;
+  }
+
+
+  &__arrows {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    .arrow {
+
+      &_prev,
+      &_next {
+        width: 53px;
+        height: 53px;
+        border-radius: 3px;
+        background: $white;
+        box-shadow: 0px 8px 11px 0px rgba(20, 20, 21, 0.05);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        span {
+          position: relative;
+          width: 14px;
+          height: 14px;
+          background: transparent;
+          // background: #eaebed;
+          overflow: hidden;
+
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 6px;
+            top: 50%;
+            margin-top: -3px;
+            left: 50%;
+            margin-left: -7px;
+            background: #eaebed;
+          }
+
+          &::before {}
+
+          &::after {}
+        }
+      }
+
+      &_prev {
+        margin-right: 30px;
+
+        span {
+          &::before {
+            transform: translateY(-3px) rotate(-45deg);
+          }
+
+          &::after {
+            transform: translateY(3px) rotate(45deg);
+          }
+        }
+      }
+
+      &_next {
+        span {
+          &::before {
+            transform: translateY(-3px) rotate(45deg);
+          }
+
+          &::after {
+            transform: translateY(3px) rotate(-45deg);
+          }
+        }
+      }
+    }
+
+
+  }
+
+}

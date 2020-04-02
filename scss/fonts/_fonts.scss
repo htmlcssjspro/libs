@@ -1,0 +1,57 @@
+@mixin font-face($font-family) {
+  @font-face {
+    font-family: '#{$font-family}';
+    src: url('./fonts/#{$font-family}/#{$font-family}-Black.eot');
+    src: local('#{$font-family}'),
+    local('#{$font-family}-Black'),
+    url('./fonts/#{$font-family}/#{$font-family}-Black.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/#{$font-family}/#{$font-family}-Black.woff2') format('woff2'),
+    url('./fonts/#{$font-family}/#{$font-family}-Black.woff') format('woff'),
+    url('./fonts/#{$font-family}/#{$font-family}-Black.ttf') format('truetype'),
+    url('./fonts/#{$font-family}/#{$font-family}-Black.svg##{$font-family}-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: '#{$font-family}';
+    src: url('./fonts/#{$font-family}/#{$font-family}-Bold.eot');
+    src: local('#{$font-family}'),
+    local('#{$font-family}-Bold'),
+    url('./fonts/#{$font-family}/#{$font-family}-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/#{$font-family}/#{$font-family}-Bold.woff2') format('woff2'),
+    url('./fonts/#{$font-family}/#{$font-family}-Bold.woff') format('woff'),
+    url('./fonts/#{$font-family}/#{$font-family}-Bold.ttf') format('truetype'),
+    url('./fonts/#{$font-family}/#{$font-family}-Bold.svg##{$font-family}-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: '#{$font-family}';
+    src: url('./fonts/#{$font-family}/#{$font-family}-Regular.eot');
+    src: local('#{$font-family}'),
+    local('#{$font-family}-Regular'),
+    url('./fonts/#{$font-family}/#{$font-family}-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/#{$font-family}/#{$font-family}-Regular.woff2') format('woff2'),
+    url('./fonts/#{$font-family}/#{$font-family}-Regular.woff') format('woff'),
+    url('./fonts/#{$font-family}/#{$font-family}-Regular.ttf') format('truetype'),
+    url('./fonts/#{$font-family}/#{$font-family}-Regular.svg##{$font-family}-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: '#{$font-family}';
+    src: url('./fonts/#{$font-family}/#{$font-family}-Light.eot');
+    src: local('#{$font-family}'),
+    local('#{$font-family}-Light'),
+    url('./fonts/#{$font-family}/#{$font-family}-Light.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/#{$font-family}/#{$font-family}-Light.woff2') format('woff2'),
+    url('./fonts/#{$font-family}/#{$font-family}-Light.woff') format('woff'),
+    url('./fonts/#{$font-family}/#{$font-family}-Light.ttf') format('truetype'),
+    url('./fonts/#{$font-family}/#{$font-family}-Light.svg##{$font-family}-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+  }
+}

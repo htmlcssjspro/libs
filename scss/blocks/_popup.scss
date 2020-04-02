@@ -1,0 +1,573 @@
+.popup {
+  @extend %container;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(#000000, 0.6);
+  display: none;
+
+  &.active {
+    display: block;
+    z-index: 100;
+  }
+
+  &__wrapper {
+    @extend %wrapper;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__close {
+    position: absolute;
+    top: 41px;
+    right: 47px;
+    width: 27px;
+    height: 27px;
+    @extend %flex-c;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 27px;
+      height: 5px;
+      background: $black;
+      // top: 50%;
+      // margin-top: -2.5px;
+      // left: 50%;
+      // margin-left: -13.5px;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.popup-getconsult {
+  display: none;
+
+  &.active {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  position: relative;
+  width: 100%;
+  //////////////////////////////////////////////////
+  // height: 707px;
+  //////////////////////////////////////////////////
+  border-radius: 25px;
+  background: $white;
+  @extend %box-shadow;
+
+
+  &__img {
+    @media (max-width: $tablet) {
+      display: none;
+      flex: 0 0;
+    }
+
+    position: relative;
+    width: 45%;
+    padding: 100px 30px;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+    }
+
+    &::before {
+      top: 25%;
+      bottom: 15%;
+      left: 5%;
+      right: 5%;
+      max-width: 471px;
+      max-height: 434px;
+      margin: 0 auto;
+      border-radius: 20px;
+      background: #eaebed;
+    }
+
+    &::after {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: url(../img/girl.png) center bottom / contain no-repeat;
+    }
+
+  }
+
+  &__form {
+    margin: 0 auto;
+    padding: 70px 24px;
+
+    &>span {
+      font: {
+        size: 60px;
+        size: 6rem;
+        weight: 900;
+      }
+
+      @media (max-width: 1100px) {
+        font: {
+          size: 48px;
+          size: 4.8rem;
+        }
+      }
+
+      @media (max-width: $tablet) {
+        font: {
+          size: 36px;
+          size: 3.6rem;
+        }
+      }
+
+      @media (max-width: $phone) {
+        font: {
+          size: 24px;
+          size: 2.4rem;
+        }
+      }
+
+      line-height: 1;
+      color: $blue;
+    }
+
+    form {
+      position: relative;
+
+      label,
+      input,
+      span {
+        font: {
+          size: 24px;
+          size: 2.4rem;
+          weight: 300;
+        }
+
+        @media (max-width: 1100px) {
+          font: {
+            size: 20px;
+            size: 2rem;
+          }
+        }
+
+        @media (max-width: $tablet) {
+          font: {
+            size: 18px;
+            size: 1.8rem;
+          }
+        }
+
+        @media (max-width: $phone) {
+          font: {
+            size: 16px;
+            size: 1.6rem;
+          }
+        }
+      }
+
+      label {
+        display: block;
+        margin: 0.5em 0;
+        padding: 0.5em 0;
+        text-align: left;
+        border-bottom: 2px solid #000;
+      }
+
+      input {
+        border: none;
+        margin-left: 1em;
+
+        &[type='submit'] {
+          display: block;
+          height: 86px;
+          border-radius: 43px;
+
+          @media (max-width: $tablet) {
+            // max-width: 320px;
+            height: 74px;
+            border-radius: 37px;
+          }
+
+          font: {
+            size: 26px;
+            size: 2.6rem;
+            weight: 500;
+          }
+
+          @media (max-width: 1100px) {
+            font: {
+              size: 24px;
+              size: 2.4rem;
+            }
+          }
+
+          @media (max-width: $tablet) {
+            font: {
+              size: 20px;
+              size: 2rem;
+            }
+          }
+
+          @media (max-width: $phone) {
+            font: {
+              size: 18px;
+              size: 1.8rem;
+            }
+          }
+
+          margin: 60px auto 0;
+          padding: 0 2em;
+
+          color: $white;
+          background: $blue;
+          @extend %box-shadow;
+          cursor: pointer;
+
+          &:focus {
+            outline: none;
+          }
+
+
+        }
+      }
+
+      span {
+        display: inline-block;
+      }
+    }
+
+    .error {
+      display: none;
+
+      &.active {
+        display: block;
+        position: absolute;
+        color: red;
+        bottom: -30px;
+        left: 0;
+        right: 0;
+
+      }
+    }
+
+  }
+}
+
+.popup-success {
+  @extend .popup-getconsult;
+
+  &__img {
+    @extend .popup-getconsult__img;
+    flex: 0 0 45%;
+
+    @media (max-width: $tablet) {
+      flex: 0 0 100%;
+    }
+  }
+
+  &__description {
+    flex: 0 0 51%;
+
+    @media (max-width: $desktop) {
+      flex: 0 0 55%;
+    }
+
+    padding: 95px 70px 95px 24px;
+    margin-left: auto;
+
+    @media (max-width: $desktop) {
+      padding: 80px 50px 80px 24px;
+    }
+
+    @media (max-width: $tablet) {
+      flex: 0 0 100%;
+      margin: 0 auto;
+      padding: 80px 50px;
+    }
+
+
+    span:nth-child(1) {
+      height: 104px;
+      background: url(../img/checked.png) center / contain no-repeat;
+    }
+
+    span:nth-child(2) {
+      margin: 0.8em 0;
+
+      font: {
+        size: 40px;
+        size: 4rem;
+        weight: 900;
+      }
+
+      @media (max-width: $desktop) {
+        font: {
+          size: 36px;
+          size: 3.6rem;
+        }
+      }
+
+      @media (max-width: 1000px) {
+        font: {
+          size: 24px;
+          size: 2.4rem;
+        }
+      }
+
+      @media (max-width: $phone) {
+        font: {
+          size: 18px;
+          size: 1.8rem;
+        }
+      }
+    }
+
+    span:nth-child(3) {
+      margin: 1.3em 0;
+
+      font: {
+        size: 30px;
+        size: 3rem;
+        weight: 500;
+      }
+
+      @media (max-width: $desktop) {
+        font: {
+          size: 24px;
+          size: 2.4rem;
+        }
+      }
+
+      @media (max-width: 1000px) {
+        font: {
+          size: 18px;
+          size: 1.8rem;
+        }
+      }
+
+      @media (max-width: $phone) {
+        font: {
+          size: 16px;
+          size: 1.6rem;
+        }
+      }
+    }
+
+    span:nth-child(4) {
+      height: 162px;
+      background: url(../img/flip-clock.png) center / contain no-repeat;
+    }
+  }
+
+
+}
+
+.popup-getvisa {
+  @extend .popup-getconsult;
+
+  &__img {
+    // position: relative;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 50%;
+    max-width: 600px;
+    border-radius: 25px;
+    background: url(../img/sale.jpg) center / cover no-repeat;
+    // z-index: -1;
+
+    flex: 0 0 50%;
+
+    @media (max-width: $tablet) {
+      display: none;
+      flex: 0 0;
+    }
+
+    height: 100%;
+    padding: 100px 10px 20px 50px;
+
+
+    color: $white;
+    text-align: left;
+
+    &::before {
+      content: '';
+
+    }
+
+    span:nth-child(1) {
+      display: flex;
+      margin-bottom: 40px;
+
+      font: {
+        size: 48px;
+        size: 4.8rem;
+        weight: 900;
+      }
+
+      @media (max-width: 1150px) {
+        font: {
+          size: 36px;
+          size: 3.6rem;
+        }
+      }
+
+      &::before {
+        content: 'от 60 \0024';
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        margin: 0 18px 0 -50px;
+        padding: 0.5em 1em;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        background: rgba($blue, 0.9);
+      }
+    }
+
+    span:nth-child(n+2):nth-child(-n+4) {
+      @extend .v_span;
+
+      font: {
+        size: 24px;
+        size: 2.4rem;
+        weight: 900;
+      }
+
+      @media (max-width: 1150px) {
+        font: {
+          size: 20px;
+          size: 2rem;
+        }
+      }
+    }
+
+    span:nth-child(5) {
+      margin: 1em 0;
+
+      font: {
+        size: 60px;
+        size: 6rem;
+        weight: 900;
+      }
+
+      @media (max-width: 1150px) {
+        font: {
+          size: 48px;
+          size: 4.8rem;
+        }
+      }
+    }
+  }
+
+  &__form {
+    @extend .popup-getconsult__form;
+
+    form {
+      position: relative;
+    }
+
+    flex: 0 0 50%;
+    margin: 0 0 0 auto;
+
+    @media (max-width: $tablet) {
+      flex: 0 0 70%;
+      margin: 0 auto;
+    }
+
+    @media (max-width: $phone) {
+      flex: 0 0 100%;
+    }
+
+    padding-top: 100px;
+
+    .error {
+      display: none;
+
+      &.active {
+        display: block;
+        position: absolute;
+        color: red;
+        bottom: -30px;
+        left: 0;
+        right: 0;
+
+      }
+    }
+
+  }
+}
+
+.popup-success-mob {
+  display: none;
+
+  &.active {
+    display: flex;
+
+    // justify-content: space-between;
+    @media (max-width: $phone) {
+      display: block
+    }
+  }
+
+  position: relative;
+  max-width: 915px;
+  border-radius: 25px;
+  margin: 0 auto;
+  padding: 50px;
+  background: $white;
+  @extend %box-shadow;
+  text-align: left;
+
+  @media (max-width: $phone) {
+    text-align: center;
+  }
+
+  &>span:nth-child(1) {
+    width: 63px;
+    height: 63px;
+    margin-right: 2em;
+    background: url(../img/checked.png) center / contain no-repeat;
+
+    @media (max-width: $phone) {
+      margin: 0 auto;
+    }
+  }
+
+  &>span:nth-child(2) {
+    span:nth-child(1) {
+      font: {
+        size: 32px;
+        size: 3.2rem;
+        weight: 900;
+      }
+    }
+
+    span:nth-child(2) {
+      font: {
+        size: 20px;
+        size: 2rem;
+        weight: 500;
+      }
+    }
+  }
+
+  .popup__close {
+    top: 20px;
+    right: 20px;
+  }
+}

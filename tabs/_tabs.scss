@@ -1,0 +1,249 @@
+.tabs {
+  @extend %wrapper;
+  @extend %margin-v;
+  // background: $white;
+  @extend %rounded;
+  @extend %box-shadow;
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+  // padding: 50px 0;
+
+  &__img {
+    position: relative;
+    height: 300px;
+    // margin: 1em 0;
+    margin-bottom: 1em;
+    overflow: hidden;
+
+    @extend %rounded;
+    @extend %box-shadow;
+
+    %tabs__img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      transition: opacity 1s;
+      z-index: -1;
+      background: $grey-500;
+      @extend %flex-c;
+
+      &.active {
+        opacity: 1;
+        z-index: 10;
+      }
+    }
+
+    &_img-1 {
+      @extend %tabs__img;
+
+      &.active {
+        // background: url('../img/tab-1.jpg') center / cover no-repeat;
+        background: $blue;
+      }
+    }
+
+    &_img-2 {
+      @extend %tabs__img;
+
+      &.active {
+        // background: url('../img/tab-2.jpg') center / cover no-repeat;
+        background: $purple;
+      }
+    }
+
+    &_img-3 {
+      @extend %tabs__img;
+
+      &.active {
+        // background: url('../img/tab-3.jpg') center / cover no-repeat;
+        background: $pink;
+      }
+    }
+
+    &_img-4 {
+      @extend %tabs__img;
+
+      &.active {
+        // background: url('../img/tab-4.jpg') center / cover no-repeat;
+        background: $orange;
+      }
+    }
+
+    &_img-5 {
+      @extend %tabs__img;
+
+      &.active {
+        // background: url('../img/tab-5.jpg') center / cover no-repeat;
+        background: $green;
+      }
+    }
+
+    &_title {
+      display: inline-block;
+      font-size: 100px;
+      font-size: 10rem;
+      font-weight: 900;
+      // line-height: 327px;
+
+      text-transform: uppercase;
+      color: $white;
+      opacity: 0.8;
+    }
+  }
+
+  &__links {
+    position: relative;
+    @extend %flex-sa;
+
+    @media (max-width: $phone) {
+      position: absolute;
+      top: 15px;
+      left: 0;
+      right: 0;
+      height: auto;
+      padding: 65px 50px 20px;
+      z-index: 19;
+      border-radius: 15px;
+      box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.14);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      transform-origin: top;
+      transform: scaleY(0);
+      transition: transform 0.5s;
+
+      &_menu-open {
+        transform: scaleY(1);
+      }
+    }
+  }
+
+  &__link {
+    min-width: 20%;
+    font-size: 1.5em;
+    font-weight: bolder;
+    line-height: 2;
+    padding-top: 0.5em;
+    color: $link-color;
+
+    &:hover {
+      color: $link-hover-color;
+    }
+
+    &.active {
+      position: relative;
+      color: $link-active-color;
+      background: $white;
+      border-top-left-radius: 0.5em;
+      border-top-right-radius: 0.5em;
+      @extend %box-shadow;
+      z-index: 5;
+
+      @media (max-width: $phone) {
+        border-radius: 1em;
+        box-shadow: none;
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+
+        @media (max-width: $phone) {
+          display: none;
+        }
+      }
+
+      &::before {
+        top: 0;
+        height: 0.5em;
+        border-top-left-radius: 0.5em;
+        border-top-right-radius: 0.5em;
+        background: $link-active-color;
+      }
+
+      &::after {
+        bottom: -1rem;
+        height: 1rem;
+        background: $white;
+      }
+    }
+  }
+
+  &__content {
+    // height: 100px;
+    // background: $white;
+    padding: 1em;
+    @extend %rounded;
+    @extend %box-shadow;
+
+    %tabs__content_item {
+      display: none;
+
+      &.active {
+        display: block;
+        animation: fade_in 0.5s;
+      }
+    }
+
+    &_content-1 {
+      @extend %tabs__content_item;
+    }
+
+    &_content-2 {
+      @extend %tabs__content_item;
+    }
+
+    &_content-3 {
+      @extend %tabs__content_item;
+    }
+
+    &_content-4 {
+      @extend %tabs__content_item;
+    }
+
+    &_content-5 {
+      @extend %tabs__content_item;
+    }
+  }
+
+
+
+
+
+
+
+
+  .menu {
+    &__wrap {}
+
+    &-mob {
+      @media (min-width: $phone+0.1px) {
+        display: none;
+      }
+
+      position: relative;
+      width: 100%;
+      border-radius: 15px;
+      cursor: pointer;
+
+      font-size: 20px;
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 3em;
+      color: $blue;
+      background: $white;
+      box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.14);
+      z-index: 20;
+    }
+  }
+
+}

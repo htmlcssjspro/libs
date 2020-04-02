@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="menu-btn">
+    <div class="menu-btn__sym"></div>
+  </div>
+
+  <nav class="menu"></nav>
+
+  <nav class="navigation nowrap">
+
+    <a class="navigation_link" href="<?= $uri_list['home'] ?>">
+      <span>
+        <span class="material-icons"></span>
+      </span>
+    </a>
+
+    <a class="navigation_link" href="<?= $uri_list['ques'] ?>">
+      <span>
+        <span class="mi-account_box"></span>
+        <span>Вопросы</span>
+      </span>
+    </a>
+
+    <a class="navigation_link" href="<?= $uri_list['rev'] ?>">
+      <span>
+        <span class="material-icons"></span>
+        <span>Отзывы</span>
+      </span>
+    </a>
+
+    <a class="navigation_link" href="<?= $uri_list['cont'] ?>">
+      <span>
+        <span class="material-icons">contacts</span>
+        <span>Контакты</span>
+      </span>
+    </a>
+
+    <a class="navigation_link" href="<?= $uri_list['oz'] ?>">
+      <span>
+        <span class="material-icons">build</span>
+        <span>Онлайн-Заявка</span>
+      </span>
+    </a>
+
+  </nav> <!-- navigation end -->
+
+  <aside class="aside">
+    <div class="aside__wrap">
+
+      <nav class="aside__nav">
+        <a class="aside__nav_link" href="<?= $uri_list['sm'] ?>">Стиральные машины</a>
+
+        <a class="aside__nav_link" href="<?= $uri_list['vn'] ?>">Электроводо&shy;нагреватели</a>
+
+        <a class="aside__nav_link" href="<?= $uri_list['mkv'] ?>">Микроволновые печи</a>
+
+        <a class="aside__nav_link" href="<?= $uri_list['vp'] ?>">Варочные поверхности</a>
+
+        <a class="aside__nav_link" href="<?= $uri_list['dsh'] ?>">Духовые шкафы</a>
+
+        <a class="aside__nav_link" href="<?= $uri_list['ep'] ?>">Электроплиты</a>
+
+        <a class="aside__nav_link" href="<?= $uri_list['pmm'] ?>">Посудомоечные машины</a>
+
+        <!-- <a class="aside__nav_link" href="<?= $uri_list['sum'] ?>">Сушильные машины</a> -->
+
+        <!-- <a class="aside__nav_link" href="">Мелкая бытовая техника</a> -->
+
+        <!-- <a class="aside__nav_link" href=""></a> -->
+
+      </nav> <!-- aside__nav end -->
+
+    </div> <!-- aside__wrap end -->
+  </aside> <!-- aside end -->
+
+  <script src="script.js"></script>
+</body>
+
+</html>

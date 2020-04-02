@@ -1,0 +1,104 @@
+@mixin flex($jc:c, $ai:c, $fd:r) {
+  // @use "sass:map";
+  $flex-map: (c: center,
+      sa: space-around,
+      sb: space-between,
+      se: space-evenly,
+
+      fs: flex-start,
+      fe: flex-end,
+      s: stretch,
+      bl: baseline,
+
+      r: row,
+      cl: column,
+      rr: row-reverse,
+      cr: column-reverse);
+
+  display: flex;
+  justify-content: #{map-get($flex-map, $jc)};
+  align-items: #{map-get($flex-map, $ai)};
+  flex-direction: #{map-get($flex-map, $fd)};
+
+}
+
+
+@mixin flex2($jc:c, $ai:c, $fd:r) {
+
+  display: flex;
+
+  @if $jc==c {
+    justify-content: center;
+  }
+
+  @else if $jc==sa {
+    justify-content: space-around;
+  }
+
+  @else if $jc==sb {
+    justify-content: space-between;
+  }
+
+  @else if $jc==se {
+    justify-content: space-evenly;
+  }
+
+
+
+  @if $ai==c {
+    align-items: center;
+  }
+
+  @else if $ai==fs {
+    align-items: flex-start;
+  }
+
+  @else if $ai==fe {
+    align-items: flex-end;
+  }
+
+  @else if $ai==s {
+    align-items: stretch;
+  }
+
+  @else if $ai==b {
+    align-items: baseline;
+  }
+
+
+
+  @if $fd==r {
+    flex-direction: row;
+  }
+
+  @else if $fd==c {
+    flex-direction: column;
+  }
+
+  @else if $fd==rr {
+    flex-direction: row-reverse;
+  }
+
+  @else if $fd==cr {
+    flex-direction: column-reverse;
+  }
+}
+
+
+@mixin square($size, $radius: 0) {
+  width: $size;
+  height: $size;
+
+  @if $radius !=0 {
+    border-radius: $radius;
+  }
+}
+
+@mixin rectangle($width, $height, $radius: 0) {
+  width: $width;
+  height: $height;
+
+  @if $radius !=0 {
+    border-radius: $radius;
+  }
+}
